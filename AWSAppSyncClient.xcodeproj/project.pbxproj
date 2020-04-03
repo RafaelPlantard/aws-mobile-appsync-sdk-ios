@@ -2049,7 +2049,6 @@
 				B48056BC22A992E200E4F742 /* AppSyncSubscriptionWithSyncTests.swift in Sources */,
 				FAC28D3B221B0F09000F84CD /* CacheKeyTests.swift in Sources */,
 				2171809123FDB28100E520C9 /* UserPoolsBasedConnectionPoolTests.swift in Sources */,
-				B47DECF6235C027F003A8127 /* APIKeyAuthInterceptorTests.swift in Sources */,
 				90DE0C49240A304D000E875B /* AWSAppSyncAuthTypeTests.swift in Sources */,
 				E47789592284B3DC008E7D6E /* MockAWSAppSyncServiceConfig.swift in Sources */,
 				FA4F0D9521D6ED9E0099D165 /* AppSyncClientComplexObjectMutationUnitTests.swift in Sources */,
@@ -2590,6 +2589,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AD111EB21748A599F5796B74 /* Pods-AWSAppSync.debug.xcconfig */;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
@@ -2615,6 +2615,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C830ED8003E746C4C6799F8E /* Pods-AWSAppSync.release.xcconfig */;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
