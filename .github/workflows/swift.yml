@@ -23,9 +23,13 @@ jobs:
 
     - name: Bootstrap
       run: carthage bootstrap
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
 
     - name: Build
       run: carthage build --no-skip-current
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
     
     - name: Archive
       run: carthage archive AWSAppSync AppSyncRealTimeClient AWSAuthCore AWSCognitoIdentityProvider AWSCognitoIdentityProviderASF AWSCore AWSMobileClient Reachability SQLite Starscream
