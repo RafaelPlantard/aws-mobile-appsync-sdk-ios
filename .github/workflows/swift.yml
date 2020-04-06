@@ -21,6 +21,14 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
+    - name: Cache
+      uses: actions/cache@v1.1.2
+      env:
+        cache-name: cache-carthage-modules
+      with:
+        path: Carthage/
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+
     - name: Bootstrap
       run: carthage bootstrap
       env:
@@ -30,7 +38,7 @@ jobs:
       run: carthage build --no-skip-current
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
-    
+
     - name: Archive
       run: carthage archive AWSAppSync AppSyncRealTimeClient AWSAuthCore AWSCognitoIdentityProvider AWSCognitoIdentityProviderASF AWSCore AWSMobileClient Reachability SQLite Starscream
     
